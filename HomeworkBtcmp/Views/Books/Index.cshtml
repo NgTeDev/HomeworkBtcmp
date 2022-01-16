@@ -1,0 +1,19 @@
+﻿@model HomePageViewModel
+
+
+@section header
+{
+    @await Html.PartialAsync("_header")
+}
+@section scripts {
+    <script src="~/js/script.js"></script>
+}
+
+
+<h1>Kitap Listesi</h1>
+<div id="kitaplar">
+    @foreach (var book in Model.PopularBooks)
+    {
+        @await Html.PartialAsync("_book", book)
+    }
+</div>
